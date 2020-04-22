@@ -1,0 +1,22 @@
+{#if语法#}
+{% if comments | length > 0 %}
+    总共有：{{ comments | length }}<br>
+{% else %}
+    <a href="string_filter.html">你好</a><br>
+{% endif %}
+
+{#loop#}
+{% for p in post %}
+    {{ post.title }}<br>
+    {{ post.name }}<br>
+    {{ post.stand }}<br>
+{% endfor %}
+
+{% for item in mylist if item.id>0 %}
+    {% if loop.index == 1 %}
+        <li style="background-color: aqua">{{ item.value }}</li>
+    {% elif loop.index ==2 %}
+        <li style="background-color: greenyellow">{{ item.value }}</li>
+    {% endif %}
+{% endfor %}
+
